@@ -1,0 +1,52 @@
+#newsletter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("https://media.istockphoto.com/vectors/abstract-background-with-in-blue-gradient-vector-id1182184295?k=20&m=1182184295&s=612x612&w=0&h=tkHjt2qWiHdbfLucZXXn1EI6AAVfYRA7Svf81_RStvQ=");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 80px;
+    margin-top: 40px;
+}
+
+#newsletter h4 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p {
+    font-size: 23px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span {
+    color: #ffbd27;
+}
+
+#newsletter .form {
+    display: flex;
+    width: 40%;
+}
+
+#newsletter input {
+    height: 3.25rem;
+    padding: 0 2.25rem;
+    font-size: 22px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#newsletter button {
+    background-color: #088178;
+    color: #fff;
+    white-space: nowrap;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

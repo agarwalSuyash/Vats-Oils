@@ -1,0 +1,58 @@
+export const bannerData = [
+  {
+    id: 1,
+    name: "Yellow Mustard",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://wp-public-fs.s3.ap-south-1.amazonaws.com/tasks/15f33c19ed08c4097bf268c0e107f347422f0dd5f51310/images/gggg-5f35f0836ee49.jpg",
+    bg: "white",
+  },
+  {
+    id: 2,
+    name: "Black Mustard",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://ftborgano.b-cdn.net/media/l2wfnlm4/black-mustard.png?height=320",
+    bg: "white",
+  },
+  {
+    id: 3,
+    name: "Flax",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://images.healthshots.com/healthshots/en/uploads/2022/02/14221007/flax-seeds-1600x900.jpg",
+    bg: "white",
+  },
+  {
+    id: 4,
+    name: "Sesame",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://img.freepik.com/free-photo/sesame-oil-raw-black-sesame-seeds-dark-background_1150-45310.jpg?w=2000",
+    bg: "white",
+  },
+  {
+    id: 5,
+    name: "Peanut",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://image.shutterstock.com/image-photo/peanuts-sack-spoon-on-dark-260nw-276316256.jpg",
+    bg: "white",
+  },
+  {
+    id: 6,
+    name: "Almond",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://img.freepik.com/free-photo/almond-oil-bottle-dark-wood-background_1150-45138.jpg",
+    bg: "white",
+  },
+  {
+    id: 7,
+    name: "Coconut",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://image.shutterstock.com/image-photo/coconut-oil-jar-on-black-260nw-414149215.jpg",
+    bg: "white",
+  },
+  {
+    id: 8,
+    name: "Kalonji",
+    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    img: "https://media.istockphoto.com/photos/jar-with-oil-of-black-caraway-seeds-caraway-seeds-on-a-dark-a-bottle-picture-id1241693015?k=20&m=1241693015&s=612x612&w=0&h=lbSjENyQKVOdbtB1BBx74XQAVO_jDjG0cu2XqyKKkMQ=",
+    bg: "white",
+  },
+];

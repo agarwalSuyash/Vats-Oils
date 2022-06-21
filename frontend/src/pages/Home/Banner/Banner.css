@@ -1,0 +1,50 @@
+#sm-banner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 5% 0 5%;
+}
+
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 45%;
+    height: 50vh;
+    background-size: cover;
+    background-position: left;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 5%;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+#sm-banner span {
+    font-size: 14px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+#sm-banner button {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 11px 18px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    outline: none;
+    transition: 0.2s;
+}
+
+#sm-banner .banner-box:hover button {
+    background: #088178;
+    border: 1px solid #088178;
+    color: white;
+}
+
+#sm-banner .banner-box:hover {
+    transform: perspective(200px) translateZ(10px);
+}

@@ -1,0 +1,40 @@
+.displaygradient {
+    background-image: url('https://t4.ftcdn.net/jpg/04/16/21/59/360_F_416215928_QXQJPJE3wtgeOLmkBy0j0hemFZZgvt1B.jpg')
+}
+
+#display {
+    background-image: url("../../../images/range.png");
+    height: 90vh;
+    width: 100%;
+    background-size: 150vh;
+    background-position: 150%;
+    background-repeat: no-repeat;
+    padding: 0 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#display h4 {
+    padding-bottom: 15px;
+}
+
+#display h1 {
+    color: #088178;
+    padding: 15px 0 15px 0;
+}
+
+#display button {
+    background-image: url("../../../images/button.png");
+    background-color: transparent;
+    color: #2E0249;
+    border: 0;
+    padding: 14px 80px 14px 65px;
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 2rem;
+}
