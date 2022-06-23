@@ -9,7 +9,6 @@ import { getAdminProduct } from "../../actions/productAction";
 import { getAllOrders } from "../../actions/orderAction.js";
 import { getAllUsers } from "../../actions/userAction.js";
 import MetaData from "../../components/MetaData";
-import Chart from 'chart.js/auto';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
