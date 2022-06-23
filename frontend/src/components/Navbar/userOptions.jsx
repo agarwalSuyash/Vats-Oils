@@ -17,7 +17,7 @@ const UserOptions = () => {
     const { isAuthenticated, user } = useSelector((state) => state.user);
 
     const [open, setOpen] = useState(false);
-    const history = useNavigate();
+    const navigate = useNavigate();
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -27,7 +27,8 @@ const UserOptions = () => {
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
     ];
 
-    if (user.role === "admin") {
+
+    if (user && user.role === "admin") {
         options.unshift({
             icon: <DashboardIcon />,
             name: "Dashboard",
@@ -36,18 +37,18 @@ const UserOptions = () => {
     }
 
     function dashboard() {
-        history.push("/admin/dashboard");
+        navigate("/admin/dashboard");
     }
 
     function orders() {
-        history.push("/orders");
+        navigate("/orders");
     }
     function account() {
-        history.push("/account");
+        navigate("/account");
     }
 
     function signin() {
-        history.push("/login");
+        navigate("/login");
     }
 
     function logoutUser() {
@@ -62,14 +63,13 @@ const UserOptions = () => {
                 ariaLabel="SpeedDial tooltip example"
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
-                style={{ zIndex: "11" }}
                 open={open}
                 direction="down"
                 className="speedDial"
                 icon={
                     <img
                         className="speedDialIcon"
-                        src={user.avatar.url ? user.avatar.url : profile}
+                        src={user?.avatar?.url ? user?.avatar?.url : profile}
                         alt="Profile"
                     />
                 }

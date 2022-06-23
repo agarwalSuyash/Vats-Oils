@@ -5,6 +5,7 @@ import logo from "../../images/logo.png";
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import UserOptions from './userOptions';
 
 
 const Navbar = () => {
@@ -29,6 +30,9 @@ const Navbar = () => {
                                 <ShoppingCartOutlined />
                             </Badge> : <ShoppingCartOutlined />}
                         </NavLink>
+                    </li>
+                    <li>
+                        <UserOptions />
                     </li>
                 </ul>
             </div>
