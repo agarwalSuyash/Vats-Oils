@@ -64,3 +64,15 @@
     height: 56px;
     border-radius: 100%;
 }
+
+@media (max-width: 991px) {
+    .logo {
+        max-width: 200px;
+        cursor: pointer;
+    }
+
+    .speedDial {
+        right: 10vmax;
+        top: 5vmax;
+    }
+}

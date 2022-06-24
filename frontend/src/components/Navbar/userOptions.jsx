@@ -12,6 +12,9 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import { useDispatch, useSelector } from "react-redux";
 import profile from "../../images/Profile.png"
 import "./Navbar.css"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import RateReviewIcon from '@mui/icons-material/RateReview';
 
 const UserOptions = () => {
     const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -25,6 +28,12 @@ const UserOptions = () => {
         { icon: <ListAltIcon />, name: "Orders", func: orders },
         { icon: <PersonIcon />, name: "Profile", func: account },
         { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
+    ];
+
+    const moreOptions = [
+        { icon: <AddShoppingCartIcon />, name: "Shop", func: shop },
+        { icon: <RateReviewIcon />, name: "Blog", func: blog },
+        { icon: <ShoppingCartIcon />, name: "Cart", func: cart }
     ];
 
 
@@ -55,11 +64,21 @@ const UserOptions = () => {
         dispatch(logout());
         alert.success("Logout Successfully");
     }
+    function shop() {
+        navigate("/products");
+    }
+    function blog() {
+        navigate("/blog");
+    }
+    function cart() {
+        navigate("/cart");
+    }
 
     return (
         <Fragment>
             <Backdrop open={open} style={{ zIndex: "10" }} />
             <SpeedDial
+                FabProps={window.innerWidth < 991 && { size: "small" }}
                 ariaLabel="SpeedDial tooltip example"
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}
@@ -80,7 +99,7 @@ const UserOptions = () => {
                         icon={item.icon}
                         tooltipTitle={item.name}
                         onClick={item.func}
-                        tooltipOpen={window.innerWidth <= 600 ? true : false}
+                        tooltipOpen={window.innerWidth <= 991 ? true : false}
                     />
                 )) : <SpeedDialAction
                     key="Sign In"
@@ -89,6 +108,14 @@ const UserOptions = () => {
                     tooltipTitle="Sign In"
                 />
                 }
+                {window.innerWidth < 991 && moreOptions.map((item) => (<SpeedDialAction
+                    key={item.name}
+                    icon={item.icon}
+                    tooltipTitle={item.name}
+                    onClick={item.func}
+                    tooltipOpen={true}
+                />))}
+
             </SpeedDial>
         </Fragment>
     );

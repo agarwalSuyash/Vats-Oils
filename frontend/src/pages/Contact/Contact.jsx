@@ -31,14 +31,16 @@ const Contact = () => {
               <div className="icon"><PhoneIcon /></div>
               <div className="text">
                 <h3>Phone</h3>
-                <p>+00 0000 000 000</p>
+                <p>+91 9871007795</p>
               </div>
             </div>
             <div className="box">
-              <div className="icon"><MailIcon /></div>
+              <a href="mailto:vatsoils2001@gmail.com"><div className="icon"><MailIcon /></div></a>
               <div className="text">
-                <h3>Email</h3>
-                <p>vatsoils2001@gmail.com</p>
+                <a href="mailto:vatsoils2001@gmail.com">
+                  <h3>Email</h3>
+                  <p>vatsoils2001@gmail.com</p>
+                </a>
               </div>
             </div>
             <div className="box">
@@ -50,7 +52,6 @@ const Contact = () => {
             </div>
           </div>
           <div className="map">
-            <h2>Visit Us</h2>
             <iframe
               title="google map location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.5651548771893!2d77.31867711472145!3d28.642792090368054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfbbf601c2131%3A0x440979668c115b1d!2sVATS%20OILS!5e0!3m2!1sen!2sin!4v1656029698082!5m2!1sen!2sin"

@@ -47,6 +47,11 @@
   display: flex;
 }
 
+.contact .contactInfo .box a {
+  text-decoration: none;
+  color: black;
+}
+
 .contact .contactInfo .box .icon {
   min-width: 60px;
   height: 60px;

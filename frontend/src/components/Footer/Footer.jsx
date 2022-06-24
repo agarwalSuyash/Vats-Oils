@@ -29,6 +29,9 @@ const Left = styled.div`
   flex-direction: column;
   padding: 20px;
   position: relative;
+  a{
+    text-decoration: none;
+  }
 `;
 const Image = styled.img`
     max-width: 120px;
@@ -40,10 +43,16 @@ const Desc = styled.p`
 `;
 const Logo = styled.h1`
     font-size: 2.5rem;
-    position: absolute;
+    color: white;
+    transition: all .3s ease;
+    @media (min-width:991px){
+      position: absolute;
     left: 150px;
     top: 10%;
-    color: white;
+    }
+    &:hover{
+      font-size: 2.7rem;
+    }
 `
 
 const SocialContainer = styled.div`
@@ -86,6 +95,14 @@ const ListItem = styled.li`
   margin-bottom: 20px;
   color: white;
   font-size: 1.2rem;
+  a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+  }
+  a:hover{
+    font-size: 1.3rem;
+  }
 `;
 
 const Right = styled.div`
@@ -135,28 +152,27 @@ const Footer = () => {
         <Center>
           <Title>Useful Links</Title>
           <List>
-            <ListItem>Sign In</ListItem>
-            <ListItem>About Us</ListItem>
-            <ListItem>View Cart</ListItem>
-            <ListItem>Delivery Information</ListItem>
-            <ListItem>My Wishlist</ListItem>
+            <ListItem><Link to="/login">Sign In</Link></ListItem>
+            <ListItem><Link to="/about">About Us</Link></ListItem>
+            <ListItem><Link to="/cart">View Cart</Link></ListItem>
+            <ListItem><Link to="/orders">Delivery Information</Link></ListItem>
             <ListItem>Privacy Policy</ListItem>
-            <ListItem>Track My Order</ListItem>
+            <ListItem><Link to="/orders">Track My Orders</Link></ListItem>
             <ListItem>Terms & Conditions</ListItem>
-            <ListItem>Help</ListItem>
+            <ListItem><Link to="/contact">Help</Link></ListItem>
           </List>
           <Copyright>Copyrights 2022 &copy; Suyash</Copyright>
         </Center>
         <Right>
           <Title>Contact Us</Title>
           <ContactItem>
-            <Room style={{ marginRight: "10px" }} /> 353 R.S. Block , Shahdara Delhi 110032
+            <Room style={{ marginRight: "10px" }} /> Chamber No. 9, Vindhanchal Tower, Kaushambi, Ghaziabad, Uttar Pradesh - 201010
           </ContactItem>
           <ContactItem>
-            <Phone style={{ marginRight: "10px" }} /> +91 99537 58154
+            <Phone style={{ marginRight: "10px" }} /> +91 9871007795
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{ marginRight: "10px" }} /> contact@suyash.dev
+            <MailOutline style={{ marginRight: "10px" }} /> vatsoils2001@gmail.com
           </ContactItem>
         </Right>
       </Container>
