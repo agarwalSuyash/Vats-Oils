@@ -15,11 +15,11 @@ const ConfirmOrder = () => {
     0
   );
 
-  const shippingCharges = subtotal > 1000 ? 0 : 200;
+  const shippingCharges = subtotal >= 500 ? 0 : 60;
 
-  const tax = subtotal * 0.18;
+  const tax = subtotal * 0;
 
-  const totalPrice = subtotal + tax + shippingCharges;
+  const totalPrice = subtotal + shippingCharges;
 
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.state}, ${shippingInfo.pinCode}, ${shippingInfo.country}`;
 
@@ -93,7 +93,7 @@ const ConfirmOrder = () => {
               </div>
               <div>
                 <p>GST:</p>
-                <span>₹{tax}</span>
+                <span>Included</span>
               </div>
             </div>
 
@@ -104,7 +104,7 @@ const ConfirmOrder = () => {
               <span>₹{totalPrice}</span>
             </div>
 
-            <button onClick={proceedToPayment}>Proceed To Payment</button>
+            <button disabled={subtotal > 60 ? false : true} onClick={proceedToPayment}>Proceed To Payment</button>
           </div>
         </div>
       </div>

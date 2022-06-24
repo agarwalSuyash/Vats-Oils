@@ -60,10 +60,11 @@ const Shipping = () => {
 
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
-  const [state, setState] = useState({ label: `${shippingInfo.state}`, value: `${shippingInfo.state}` });
+  const [states, setStates] = useState({ label: `${shippingInfo.state}`, value: `${shippingInfo.state}` });
   const [pinCode, setPinCode] = useState(shippingInfo.pinCode);
   const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
   const country = "India";
+
 
   const shippingSubmit = (e) => {
     e.preventDefault();
@@ -73,7 +74,7 @@ const Shipping = () => {
       return;
     }
     dispatch(
-      saveShippingInfo({ address, city, state, country, pinCode, phoneNo })
+      saveShippingInfo({ address, city, state: states.value, country, pinCode, phoneNo })
     );
     navigate("/order/confirm");
   };
@@ -150,13 +151,13 @@ const Shipping = () => {
             </div>
             <div>
               <TransferWithinAStationIcon />
-              <Select className="select" theme={customTheme} styles={customStyles} options={categories} value={state} onChange={(e) => setState(e)} />
+              <Select className="select" theme={customTheme} styles={customStyles} options={categories} value={states} onChange={(e) => setStates(e)} />
             </div>
             <input
               type="submit"
               value="Continue"
               className="shippingBtn"
-              disabled={state ? false : true}
+              disabled={states ? false : true}
             />
           </form>
         </div>

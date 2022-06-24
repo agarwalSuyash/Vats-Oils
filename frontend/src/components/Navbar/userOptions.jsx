@@ -78,7 +78,6 @@ const UserOptions = () => {
         <Fragment>
             <Backdrop open={open} style={{ zIndex: "10" }} />
             <SpeedDial
-                FabProps={window.innerWidth < 991 && { size: "small" }}
                 ariaLabel="SpeedDial tooltip example"
                 onClose={() => setOpen(false)}
                 onOpen={() => setOpen(true)}

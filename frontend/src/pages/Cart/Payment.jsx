@@ -72,6 +72,7 @@ const Payment = () => {
           <input
             type="submit"
             value="Confirm Order"
+            disabled={orderInfo && orderInfo.totalPrice > 60 ? false : true}
             ref={payBtn}
             className="paymentFormBtn"
           />
