@@ -1,27 +1,102 @@
-.contactContainer {
-  height: 100vh;
-  width: 100vw;
-  max-width: 100%;
-  display: grid;
-  place-items: center;
-  background-color: white;
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url('../../images/pexels-filipe-de-azevedo-2083740.jpg');
+  background-size: cover;
 }
 
-.mailBtn {
-  text-decoration: none;
-  transform: translateX(-100vw);
-  animation: mailBtnAnimation 2s forwards;
+.contact .content {
+  max-width: 800px;
+  text-align: center;
 }
 
-.mailBtn>button {
-  text-decoration: none;
-  font: 200 2vmax "Roboto";
-  cursor: url("https://img.icons8.com/color/48/000000/edit--v2.png"), pointer;
-  padding: 2vmax;
+.contact .content h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #fff;
 }
 
-@keyframes mailBtnAnimation {
-  to {
-    transform: translateX(0);
+.contact .content p {
+  font-weight: 300;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contact .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+
+.contact .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+.contact .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  columns: #fff;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.contact .contactInfo .box .text h3 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #0fd1c4;
+}
+
+.contact .contactInfo .box .text p {
+  color: white;
+  font-size: 20px;
+}
+
+.map {
+  width: 50%;
+}
+
+@media (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .container .contactInfo {
+    margin-bottom: 40px;
+  }
+
+  container .contactInfo,
+  .map {
+    width: 100%;
   }
 }
