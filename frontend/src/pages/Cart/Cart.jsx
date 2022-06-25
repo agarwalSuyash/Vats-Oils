@@ -215,6 +215,7 @@ const Cart = () => {
                         <ProductPrice>{`₹${item.price * item.quantity
                           }`}</ProductPrice>
                       </PriceDetail>
+                      <hr />
                     </Product>
                   ))}
               </Info>

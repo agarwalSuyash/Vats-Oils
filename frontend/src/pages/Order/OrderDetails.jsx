@@ -1,18 +1,14 @@
 import React, { Fragment, useEffect } from "react";
 import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../../components/MetaData";
-import { Link, useParams } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../../components/Loader/Loader";
 import { useAlert } from "react-alert";
-import Navbar from '../../components/Navbar/Navbar'
-import Footer from '../../components/Footer/Footer'
+import OrderItems from "./OrderItems";
 
-const OrderDetails = () => {
+const OrderDetails = ({ id }) => {
   const { order, error, loading } = useSelector((state) => state.orderDetails);
-  const { id } = useParams();
   const dispatch = useDispatch();
   const alert = useAlert();
 
@@ -30,13 +26,8 @@ const OrderDetails = () => {
         <Loader />
       ) : (
         <Fragment>
-          <Navbar />
-          <MetaData title="Order Details" />
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
-              <Typography component="h1">
-                Order #{order && order._id}
-              </Typography>
               <Typography>Shipping Info</Typography>
               <div className="orderDetailsContainerBox">
                 <div>
@@ -57,28 +48,6 @@ const OrderDetails = () => {
                   </span>
                 </div>
               </div>
-              <Typography>Payment</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
-                  <p>Amount:</p>
-                  <span>{order.totalPrice && order.totalPrice}</span>
-                </div>
-              </div>
-
-              <Typography>Order Status</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
-                  <p
-                    className={
-                      order.orderStatus && order.orderStatus === "Delivered"
-                        ? "greenColor"
-                        : "redColor"
-                    }
-                  >
-                    {order.orderStatus && order.orderStatus}
-                  </p>
-                </div>
-              </div>
             </div>
 
             <div className="orderDetailsCartItems">
@@ -86,21 +55,11 @@ const OrderDetails = () => {
               <div className="orderDetailsCartItemsContainer">
                 {order.orderItems &&
                   order.orderItems.map((item) => (
-                    <div key={item.product}>
-                      <img src={item.image} alt="Product" />
-                      <Link to={`/product/${item.product}`}>
-                        {item.name}
-                      </Link>{" "}
-                      <span>
-                        {item.quantity} X ₹{item.price} ={" "}
-                        <b>₹{item.price * item.quantity}</b>
-                      </span>
-                    </div>
+                    <OrderItems item={item} />
                   ))}
               </div>
             </div>
           </div>
-          <Footer />
         </Fragment>
       )}
     </Fragment>

@@ -50,14 +50,21 @@ const Title = styled.h1`
   font-weight: 200;
 `;
 
+const RR = styled.div`
+display: flex;
+  align-items: center;
+`
+
 const Review = styled.span`
   font: 200 0.8vmax cursive;
+  margin-left: 15px;
   color: rgba(0, 0, 0, 0.699);
   font-size: 1.2em;
 `
 
 const Desc = styled.p`
   margin: 20px 0px;
+  font-size: 1.5vmax;
 `;
 
 const Price = styled.span`
@@ -187,11 +194,11 @@ const ProductDetails = () => {
             </ImgContain>
             <InfoContainer>
               <Title>{product.name}</Title>
-              <Rating {...options} />
-              <Review>
-                {" "}
-                ({product.numOfReviews} Reviews)
-              </Review>
+              <RR><Rating {...options} />
+                <Review>
+                  {" "}
+                  ({product.numOfReviews} Reviews)
+                </Review></RR>
               <br /><br /><br /><br />
               <Desc>
                 {product.description}
