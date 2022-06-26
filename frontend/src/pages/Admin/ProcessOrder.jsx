@@ -130,7 +130,7 @@ const ProcessOrder = () => {
                   </div>
                 </div>
                 <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
+                  <Typography>Ordered Items:</Typography>
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (
@@ -151,7 +151,7 @@ const ProcessOrder = () => {
               {/*  */}
               <div
                 style={{
-                  display: order.orderStatus === "Delivered" ? "none" : "block",
+                  display: (order.orderStatus === "Delivered" || order.orderStatus === "Cancelled") ? "none" : "block",
                 }}
               >
                 <form
