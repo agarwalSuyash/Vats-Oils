@@ -131,7 +131,7 @@ const MyOrders = () => {
             <Bottom>
               <Info>
                 {orders &&
-                  orders.map((item) => (
+                  orders.slice(0).reverse().map((item) => (
                     <Fragment key={item._id}>
                       <Order>
                         <Details>
@@ -142,10 +142,18 @@ const MyOrders = () => {
                         <PriceDetail>
                           <OrderAmount>Total Products: {item.orderItems.length}</OrderAmount>
                           <OrderPrice>{`Total Price: ₹${item.totalPrice}`}</OrderPrice>
-                          <OrderStatus cl={item.orderStatus === "Delivered" ? "green" : "red"}><CircleIcon />  {item.orderStatus}</OrderStatus>
+                          <OrderStatus cl={item.orderStatus === "Delivered" ? "green" : (item.orderStatus === "Shipped" ? "#fadb15" : (item.orderStatus === "Processing" ? "#fc7318" : "red"))}><CircleIcon />  {item.orderStatus}</OrderStatus>
                         </PriceDetail>
                       </Order>
-                      <OrderDetails id={item._id} />
+                      <OrderDetails order={item} name={user.name} />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <hr />
+                      <br />
+                      <br />
+                      <br />
                     </Fragment>
                   ))}
               </Info>

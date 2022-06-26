@@ -20,7 +20,6 @@ import ConfirmOrder from "./pages/Cart/ConfirmOrder";
 import Payment from "./pages/Cart/Payment";
 import OrderSuccess from "./pages/Cart/OrderSuccess";
 import MyOrders from "./pages/Order/MyOrders";
-import OrderDetails from "./pages/Order/OrderDetails";
 import Dashboard from "./pages/Admin/Dashboard";
 import ProductList from "./pages/Admin/ProductList";
 import NewProduct from "./pages/Admin/NewProduct";
@@ -112,12 +111,6 @@ function App() {
 
       {isAuthenticated ? (
         <Route path="/order/confirm" element={<ConfirmOrder />} />
-      ) : (
-        <Route path="/login" element={<LoginSignUp />} />
-      )}
-
-      {isAuthenticated ? (
-        <Route path="/order/:id" element={<OrderDetails />} />
       ) : (
         <Route path="/login" element={<LoginSignUp />} />
       )}

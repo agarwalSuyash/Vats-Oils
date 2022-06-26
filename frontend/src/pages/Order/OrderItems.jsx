@@ -9,7 +9,7 @@ const Item = styled.div`
     text-decoration: none;
   }
   span{
-    margin-left: 40%;
+    margin-left: auto;
   }
 `;
 const Image = styled.img`
@@ -18,17 +18,17 @@ const Image = styled.img`
 `;
 
 const OrderItems = ({ item }) => {
-    return (
-        <Item key={item.product}>
-            <Link to={`/product/${item.product}`}>
-                <Image src={item.image} alt="Product" />
-            </Link>
-            <Link to={`/product/${item.product}`}>{item.name}</Link>{" "}
-            <span>
-                {item.quantity} X ₹{item.price} = <b>₹{item.price * item.quantity}</b>
-            </span>
-        </Item>
-    );
+  return (
+    <Item key={item.product}>
+      <Link to={`/product/${item.product}`}>
+        <Image src={item.image} alt="Product" />
+      </Link>
+      <Link to={`/product/${item.product}`}>{item.name}</Link>{" "}
+      <span>
+        {item.quantity} X ₹{item.price} = <b>₹{item.price * item.quantity}</b>
+      </span>
+    </Item>
+  );
 };
 
 export default OrderItems;
