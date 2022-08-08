@@ -1,4 +1,5 @@
-import React, { Fragment, useState, useEffect, useNavigate, useParams } from "react";
+import React, { Fragment, useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./ResetPassword.css";
 import Loader from "../../components/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
