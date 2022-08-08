@@ -8,7 +8,7 @@ import MetaData from "../../components/MetaData";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
 
-const ResetPassword = ({ match }) => {
+const ResetPassword = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
