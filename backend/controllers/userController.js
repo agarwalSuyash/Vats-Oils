@@ -14,11 +14,15 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     crop: "scale",
   });
 
-  const {
-    name,
-    email,
-    password
-  } = req.body;
+  const { name, email, password } = req.body;
+
+  const check = await User.findOne({
+    email: req.body.email,
+  });
+
+  if (check) {
+    return next(new ErrorHandler("User already exists", 404));
+  }
 
   const user = await User.create({
     name,
@@ -35,10 +39,7 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
 // Login User
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
-  const {
-    email,
-    password
-  } = req.body;
+  const { email, password } = req.body;
 
   // checking if user has given password and email both
 
@@ -47,7 +48,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   }
 
   const user = await User.findOne({
-    email
+    email,
   }).select("+password");
 
   if (!user) {
@@ -79,7 +80,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
 // Forgot Password
 exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({
-    email: req.body.email
+    email: req.body.email,
   });
 
   if (!user) {
@@ -90,7 +91,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const resetToken = user.getResetPasswordToken();
 
   await user.save({
-    validateBeforeSave: false
+    validateBeforeSave: false,
   });
 
   const resetPasswordUrl = `${req.protocol}://${req.get(
@@ -115,7 +116,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
     user.resetPasswordExpire = undefined;
 
     await user.save({
-      validateBeforeSave: false
+      validateBeforeSave: false,
     });
 
     return next(new ErrorHandler(error.message, 500));
@@ -133,7 +134,7 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({
     resetPasswordToken,
     resetPasswordExpire: {
-      $gt: Date.now()
+      $gt: Date.now(),
     },
   });
 
