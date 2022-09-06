@@ -161,7 +161,7 @@ const Footer = () => {
             <ListItem>Terms & Conditions</ListItem>
             <ListItem><Link to="/contact">Help</Link></ListItem>
           </List>
-          <Copyright>Copyrights 2022 &copy; Suyash</Copyright>
+          <Copyright>Made by: Suyash Agarwal</Copyright>
         </Center>
         <Right>
           <Title>Contact Us</Title>
